@@ -4,24 +4,25 @@ apt update && apt upgrade -y
 apt install openjdk-17-jdk -y
 
 Verify:
-
 java -version
+
 3. Add Jenkins Repository
+
 curl -fsSL https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key | tee \
 /usr/share/keyrings/jenkins-keyring.asc > /dev/null
 echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
 https://pkg.jenkins.io/debian-stable binary/ | tee \
 /etc/apt/sources.list.d/jenkins.list > /dev/null
-4. Install Jenkins
-apt update
-apt install jenkins -y
-5. Start Jenkins
-systemctl start jenkins
-systemctl enable jenkins
+
+5. Install Jenkins
+apt update && apt install jenkins -y
+
+7. Start Jenkins
+systemctl start jenkins && systemctl enable jenkins
 
 Check status:
+8. systemctl status jenkins
 
-systemctl status jenkins
 6. Access Jenkins
 
 Open in browser:
